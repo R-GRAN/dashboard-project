@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4%;
+  width: 100%;
+  .logo {
+    width: 110px;
+  }
+
+  .profile {
+    width:max(10%,80px) ;
+    border-radius: 50%;
+  }
+}
