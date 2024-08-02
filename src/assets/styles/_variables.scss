@@ -1,0 +1,31 @@
+$bg-gold: radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #fedb37 0%,
+    #fdb931 8%,
+    #9f7928 30%,
+    #8a6e2f 40%,
+    transparent 80%
+  ),
+  radial-gradient(
+    ellipse farthest-corner at left top,
+    #ffffff 0%,
+    #ffffac 8%,
+    #d1b464 25%,
+    #5d4a1f 62.5%,
+    #5d4a1f 100%
+  );
+$bg-silver: radial-gradient(
+    ellipse farthest-corner at right bottom,
+    #333333 0%,
+    #262626 8%,
+    #1a1a1a 30%,
+    #0d0d0d 40%,
+    transparent 80%
+  ),
+  radial-gradient(
+    ellipse farthest-corner at left top,
+    #696969 0%,
+    #656565 8.5%,
+    #4e4e4e 37.5%,
+    #2c2c2c 100%
+  );

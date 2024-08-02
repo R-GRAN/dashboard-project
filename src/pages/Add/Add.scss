@@ -1,0 +1,124 @@
+.add {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 50px;
+  font-size: 16px;
+
+  form {
+    gap: 20px;
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(30deg);
+      }
+      80% {
+        transform: translateX(-100%) translateY(-100%) rotate(30deg);
+      }
+      100% {
+        transform: translateX(100%) translateY(100%) rotate(30deg);
+      }
+    }
+
+    .add-img-upload label {
+      display: flex;
+      width: max(40%, 280px);
+      aspect-ratio: 16/9;
+
+      background: radial-gradient(
+          ellipse farthest-corner at right bottom,
+          rgba(192, 192, 192, 0.5) 0%,
+          rgba(169, 169, 169, 0.5) 8%,
+          rgba(128, 128, 128, 0.5) 30%,
+          rgba(105, 105, 105, 0.5) 40%,
+          rgba(0, 0, 0, 0) 80%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at left top,
+          rgba(245, 245, 245, 0.5) 0%,
+          rgba(211, 211, 211, 0.5) 8%,
+          rgba(169, 169, 169, 0.5) 25%,
+          rgba(105, 105, 105, 0.5) 62.5%,
+          rgba(105, 105, 105, 0.5) 100%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at right bottom,
+          rgba(255, 215, 0, 0.2) 0%,
+          rgba(218, 165, 32, 0.2) 50%,
+          rgba(184, 134, 11, 0.2) 100%
+        );
+      background-color: goldenrod;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .add-img-upload-img {
+      height: 100%;
+      margin: auto;
+      object-fit: cover;
+    }
+
+    .add-img-upload-icon {
+      width: 60px;
+      height: 60px;
+      margin: auto;
+    }
+    .add-product-name,
+    .add-product-description {
+      width: max(40%, 280px);
+      input,
+      textarea {
+        padding: 10px;
+      }
+    }
+    .add-category-price {
+      display: flex;
+      gap: 30px;
+      select,
+      input {
+        max-width: 120px;
+        padding: 10px;
+      }
+    }
+    .add-btn {
+      width: max(120px);
+      border: none;
+      padding: 10px;
+      color: white;
+      margin-top: 15px;
+      background: $bg-gold;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 430px) {
+  .add {
+    form {
+      padding: 10px;
+
+      .add-img-upload label {
+        width: 100%;
+      }
+
+      .add-product-name,
+      .add-product-description {
+        width: 100%;
+      }
+
+      .add-category-price {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .add-btn {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+  }
+}

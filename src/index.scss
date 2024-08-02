@@ -9,18 +9,28 @@
 
 body {
   min-height: 100vh;
+  color: #ffff;
+  background: $bg-silver;
   a {
     border: none;
     color: inherit;
+    text-decoration: none;
   }
-  hr{
-    border:none;
+  hr {
+    border: none;
     height: 1px;
-    background-color: #a9a9a9;
+    background-color: #d1b464;
   }
 
-  .app-content{
-    display: flex;
-    flex-direction: column;
+  input,textarea,select{
+    outline-color: #bf943f;
   }
+}
+
+.app-content {
+display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
 }
