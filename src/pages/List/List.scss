@@ -1,0 +1,42 @@
+.Toastify__toast-theme--light {
+  background: $bg-darkSilver;
+  color: #ffff;
+}
+.Toastify__progress-bar-theme--light {
+  background: $bg-gold;
+  filter: brightness(1.6);
+}
+.list-table-format {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #d1b464;
+
+  img {
+    width: 50px;
+  }
+  &.title {
+    background: rgba(218, 165, 32, 0.311);
+    backdrop-filter: brightness(20%);
+  }
+  *:nth-child(5) {
+    justify-self: center;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  .list-table-format {
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 15px;
+    justify-items: center;
+    &.title {
+      display: none;
+    }
+  }
+}

@@ -12,45 +12,12 @@
       gap: 10px;
     }
 
-    @keyframes shine {
-      0% {
-        transform: translateX(-100%) translateY(-100%) rotate(30deg);
-      }
-      80% {
-        transform: translateX(-100%) translateY(-100%) rotate(30deg);
-      }
-      100% {
-        transform: translateX(100%) translateY(100%) rotate(30deg);
-      }
-    }
-
     .add-img-upload label {
       display: flex;
       width: max(40%, 280px);
       aspect-ratio: 16/9;
 
-      background: radial-gradient(
-          ellipse farthest-corner at right bottom,
-          rgba(192, 192, 192, 0.5) 0%,
-          rgba(169, 169, 169, 0.5) 8%,
-          rgba(128, 128, 128, 0.5) 30%,
-          rgba(105, 105, 105, 0.5) 40%,
-          rgba(0, 0, 0, 0) 80%
-        ),
-        radial-gradient(
-          ellipse farthest-corner at left top,
-          rgba(245, 245, 245, 0.5) 0%,
-          rgba(211, 211, 211, 0.5) 8%,
-          rgba(169, 169, 169, 0.5) 25%,
-          rgba(105, 105, 105, 0.5) 62.5%,
-          rgba(105, 105, 105, 0.5) 100%
-        ),
-        radial-gradient(
-          ellipse farthest-corner at right bottom,
-          rgba(255, 215, 0, 0.2) 0%,
-          rgba(218, 165, 32, 0.2) 50%,
-          rgba(184, 134, 11, 0.2) 100%
-        );
+      background: $bg-silver-opacity;
       background-color: goldenrod;
       cursor: pointer;
       border-radius: 4px;
@@ -58,8 +25,10 @@
     }
 
     .add-img-upload-img {
-      height: 100%;
-      margin: auto;
+      width: 100%;
+      margin: 1.5px;
+      border: solid 1px rgb(55, 55, 55);
+      border-radius: 4px;
       object-fit: cover;
     }
 
@@ -73,7 +42,9 @@
       width: max(40%, 280px);
       input,
       textarea {
+        height: fit-content;
         padding: 10px;
+        resize: none;
       }
     }
     .add-category-price {
@@ -82,13 +53,14 @@
       select,
       input {
         max-width: 120px;
+        color: black;
         padding: 10px;
       }
     }
     .add-btn {
       width: max(120px);
       border: none;
-      padding: 10px;
+      padding: 15px;
       color: white;
       margin-top: 15px;
       background: $bg-gold;
@@ -117,7 +89,6 @@
       }
       .add-btn {
         width: 100%;
-        padding: 15px;
       }
     }
   }

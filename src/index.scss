@@ -8,9 +8,10 @@
 }
 
 body {
+  --toastify-icon-color-info: #d1b464;
   min-height: 100vh;
   color: #ffff;
-  background: $bg-silver;
+  background: $bg-darkSilver;
   a {
     border: none;
     color: inherit;
@@ -22,15 +23,19 @@ body {
     background-color: #d1b464;
   }
 
-  input,textarea,select{
-    outline-color: #bf943f;
+  input,
+  textarea,
+  select,
+  a,
+  button {
+    outline-color: darkgoldenrod;
   }
 }
 
 .app-content {
-display: flex;
+  display: flex;
 }
-.flex-col{
+.flex-col {
   display: flex;
   flex-direction: column;
 }

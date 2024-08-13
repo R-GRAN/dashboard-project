@@ -1,0 +1,125 @@
+.login-popUp {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: grid;
+  color: white;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      rgba(63, 54, 13, 0.15) 0%,
+      rgba(63, 46, 12, 0.15) 8%,
+      rgba(39, 30, 10, 0.15) 30%,
+      rgba(35, 27, 12, 0.15) 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      rgba(192, 192, 192, 0.15) 0%,
+      rgba(189, 189, 122, 0.15) 8%,
+      rgba(153, 123, 63, 0.15) 25%,
+      rgba(115, 97, 51, 0.15) 62.5%,
+      rgba(115, 97, 51, 0.15) 100%
+    );
+  backdrop-filter: brightness(0.7);
+}
+
+.login-popUp-container {
+  place-self: center;
+  width: max(23vw, 330px);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  animation: fadeIn 0.5s;
+  background: #666666;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #333333 0%,
+      #262626 8%,
+      #1a1a1a 30%,
+      #0d0d0d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #696969 0%,
+      #656565 8.5%,
+      #4e4e4e 37.5%,
+      #2c2c2c 100%
+    );
+  accent-color: #d1b464;
+}
+
+.login-popUp-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.login-popUp-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-popUp-inputs input {
+  outline: none;
+  padding: 10px;
+  border: solid 2px rgb(199, 199, 199);
+  border-radius: 4px;
+}
+
+.login-popUp-container button {
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  background: #bf953f;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  cursor: pointer;
+}
+
+.login-popUp-condition {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+}
+
+.login-popUp-condition input {
+  margin-top: 5px;
+}
+
+.login-popUp-password-check {
+  display: flex;
+  gap: 8px;
+}
+
+.login-popUp p span {
+  color: #bf953f;
+  font-weight: 500;
+  cursor: pointer;
+}

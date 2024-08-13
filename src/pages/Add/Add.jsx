@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { FaImage } from "react-icons/fa6";
+import { addFood } from "@/assets/utils/function";
+import { ToastContainer } from "react-toastify";
 
-function Add() {
+function Add({ setShowLogin }) {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -15,16 +17,24 @@ function Add() {
     if (evt.target.type === "file")
       setData({
         ...data,
-        [evt.target.name]: URL.createObjectURL(evt.target.files[0]),
+        [evt.target.name]: evt.target.files[0],
       });
     else if (evt.target.name === "price")
       setData({ ...data, [evt.target.name]: parseInt(evt.target.value) });
     else setData({ ...data, [evt.target.name]: evt.target.value });
   }
 
+  async function handleSubmit(evt) {
+    evt.preventDefault(), setShowLogin(await addFood(data, image));
+  }
+
   return (
     <div className="add">
-      <form className="flex-col add-form ">
+      <ToastContainer />
+      <form
+        onSubmit={(evt) => handleSubmit(evt)}
+        className="flex-col add-form "
+      >
         <div className="add-img-upload flex-col">
           <p>Charger une image</p>
           <label htmlFor="image">
@@ -55,7 +65,7 @@ function Add() {
             onChange={(evt) => updateDataObject(evt)}
             type="text"
             name="name"
-            id=""
+            id="name"
             required
           />
         </div>
@@ -64,7 +74,8 @@ function Add() {
           <textarea
             onChange={(evt) => updateDataObject(evt)}
             name="description"
-            rows="6"
+            rows="2"
+            maxLength={70}
             required
           />
         </div>
@@ -74,7 +85,7 @@ function Add() {
             <select
               onChange={(evt) => updateDataObject(evt)}
               name="category"
-              id=""
+              id="category"
               required
             >
               <option value=""></option>
@@ -100,14 +111,7 @@ function Add() {
             />
           </div>
         </div>
-        <button
-          onClick={(evt) => {
-            evt.preventDefault(), console.log(data);
-          }}
-          className="add-btn"
-        >
-          AJOUTER
-        </button>
+        <button className="add-btn">AJOUTER</button>
       </form>
     </div>
   );

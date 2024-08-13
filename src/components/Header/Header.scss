@@ -9,7 +9,15 @@
   }
 
   .profile {
-    width:max(5%,40px) ;
+    width: max(5%, 40px);
     border-radius: 50%;
+  }
+}
+
+@media (max-width: 430px) {
+  .header {
+    .logo {
+      width: 75px;
+    }
   }
 }
