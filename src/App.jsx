@@ -5,20 +5,20 @@ import Add from "@/pages/Add/Add";
 import List from "@/pages/List/List";
 import Orders from "@/pages/Orders/Orders";
 import LoginPopUp from "@/components/LoginPopUp/LoginPopUp";
+import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 
 function App() {
-
-const [showLogin,setShowLogin]=useState(true)
+  const [showLogin, setShowLogin] = useState(true);
 
   return (
     <div>
-      {showLogin && <LoginPopUp setShowLogin={setShowLogin}/>}
-      
+      {showLogin && <LoginPopUp setShowLogin={setShowLogin} />}
       <Header />
       <hr />
       <div className="app-content">
         <Sidebar />
+      <ToastContainer />
         <Routes>
           <Route path="/add" element={<Add setShowLogin={setShowLogin} />} />
           <Route path="/list" element={<List />} />

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import {useState } from "react";
 import { FaImage } from "react-icons/fa6";
-import { addFood } from "@/assets/utils/function";
-import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import { API_ROUTES, APP_ROUTES } from "@/assets/utils/constants";
+import axios from "axios";
 
 function Add({ setShowLogin }) {
   const [image, setImage] = useState(false);
@@ -24,13 +25,50 @@ function Add({ setShowLogin }) {
     else setData({ ...data, [evt.target.name]: evt.target.value });
   }
 
+  async function addFood(data, image) {
+    const adminId = localStorage.getItem("adminId");
+    const food = {
+      adminId,
+      name: data.name,
+      description: data.description,
+      category: data.category,
+      imageUrl: data.imageUrl,
+      price: data.price,
+    };
+    const bodyFormData = new FormData();
+    bodyFormData.append("food", JSON.stringify(food));
+    bodyFormData.append("image", image);
+
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `${API_ROUTES.FOODS + APP_ROUTES.ADD_FOOD}`,
+        data: bodyFormData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      if (response?.status === 201) toast.success("Food created");
+    } catch (err) {
+      if (err?.response?.status === 401) {
+        toast.error("Veuillez vous connecter");
+        if (localStorage.getItem("adminId")) {
+          localStorage.removeItem("adminId");
+          setShowLogin(true);
+        }
+      }
+
+      console.error(err);
+    }
+  }
+
   async function handleSubmit(evt) {
-    evt.preventDefault(), setShowLogin(await addFood(data, image));
+    evt.preventDefault(), await addFood(data, image);
   }
 
   return (
     <div className="add">
-      <ToastContainer />
       <form
         onSubmit={(evt) => handleSubmit(evt)}
         className="flex-col add-form "

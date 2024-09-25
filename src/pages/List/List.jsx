@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { FaXmark } from "react-icons/fa6";
-import { toast, ToastContainer } from "react-toastify";
+import { FaTrashCan } from "react-icons/fa6";
+import { toast } from "react-toastify";
 import { API_ROUTES, APP_ROUTES } from "@/assets/utils/constants";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -50,7 +50,6 @@ function List() {
 
   return (
     <div className="list add flex-col">
-      <ToastContainer />
       <p>Liste des items</p>
       <div className="list-table">
         <div className="list-table-format title">
@@ -67,7 +66,7 @@ function List() {
             <p>{item.name}</p>
             <p>{item.category}</p>
             <p>{item.price} €</p>
-            <FaXmark className="cursor" onClick={() => deleteItem(item)} />
+            <FaTrashCan className="cursor" onClick={() => deleteItem(item)} />
           </div>
         ))}
       </div>
